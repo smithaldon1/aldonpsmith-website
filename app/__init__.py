@@ -6,9 +6,10 @@ for different environments based on the value of the CONFIG_TYPE environment var
 
 import os
 from flask import Flask, render_template
-from flask_mail import Mail
+# from flask_mail import Mail
 from celery import Celery  # NEW!!!!!
 from config import Config  # NEW!!!!!
+from flask_mail import Mail
 import logging
 from flask.logging import default_handler
 from logging.handlers import RotatingFileHandler
@@ -55,7 +56,8 @@ def register_blueprints(app):
     app.register_blueprint(main_blueprint)
 
 def initialize_extensions(app):
-    mail.init_app(app)
+    # mail.init_app(app)
+    pass
 
 def register_error_handlers(app):
 
